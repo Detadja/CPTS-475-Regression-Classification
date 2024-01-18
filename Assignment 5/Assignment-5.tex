@@ -1,0 +1,1273 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Assignment 5},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assignment 5}
+\author{}
+\date{\vspace{-2.5em}2022-10-30}
+
+\begin{document}
+\maketitle
+
+\hypertarget{assignment-5}{%
+\section{Assignment 5}\label{assignment-5}}
+
+\hypertarget{problem-1}{%
+\subsection{Problem 1}\label{problem-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
+## v ggplot2 3.3.6      v purrr   0.3.4 
+## v tibble  3.1.8      v dplyr   1.0.10
+## v tidyr   1.2.0      v stringr 1.4.1 
+## v readr   2.1.2      v forcats 0.5.2 
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{winequalityred }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"winequality{-}red.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{","}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{boston }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"boston.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{","}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{bbc }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"bbc.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{","}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a.}{%
+\subsubsection{a.)}\label{a.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{linear\_reg }\OtherTok{=} \FunctionTok{lm}\NormalTok{(pH}\SpecialCharTok{\textasciitilde{}}\NormalTok{.}\SpecialCharTok{{-}}\NormalTok{fixed\_acidity, }\AttributeTok{data =}\NormalTok{ winequalityred)}
+\FunctionTok{summary}\NormalTok{(linear\_reg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = pH ~ . - fixed_acidity, data = winequalityred)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.49686 -0.07741 -0.00613  0.07701  0.49572 
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)           1.3570729  2.5169763   0.539  0.58985    
+## volatile_acidity     -0.0324090  0.0232021  -1.397  0.16266    
+## citric_acid          -0.4326611  0.0236253 -18.313  < 2e-16 ***
+## residual_sugar       -0.0029144  0.0025352  -1.150  0.25050    
+## chlorides            -0.3214631  0.0765066  -4.202 2.80e-05 ***
+## free_sulfur_dioxide   0.0014447  0.0004032   3.583  0.00035 ***
+## total_sulfur_dioxide -0.0002790  0.0001336  -2.088  0.03693 *  
+## density               1.7920994  2.5077019   0.715  0.47494    
+## sulphates            -0.0063721  0.0215864  -0.295  0.76789    
+## alcohol               0.0422034  0.0042522   9.925  < 2e-16 ***
+## quality              -0.0191678  0.0046761  -4.099 4.36e-05 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.1214 on 1588 degrees of freedom
+## Multiple R-squared:  0.3857, Adjusted R-squared:  0.3818 
+## F-statistic:  99.7 on 10 and 1588 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\hypertarget{b.}{%
+\subsubsection{b.)}\label{b.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(linear\_reg)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-3-1.pdf}
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-3-2.pdf}
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-3-3.pdf}
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-3-4.pdf}
+
+\hypertarget{c.}{%
+\subsubsection{c.)}\label{c.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{interaction1 }\OtherTok{=} \FunctionTok{lm}\NormalTok{(alcohol}\SpecialCharTok{\textasciitilde{}}\NormalTok{.}\SpecialCharTok{{-}}\NormalTok{fixed\_acidity }\SpecialCharTok{+}\NormalTok{ residual\_sugar}\SpecialCharTok{:}\NormalTok{alcohol, }\AttributeTok{data =}\NormalTok{ winequalityred)}
+\NormalTok{interaction2 }\OtherTok{=} \FunctionTok{lm}\NormalTok{(alcohol}\SpecialCharTok{\textasciitilde{}}\NormalTok{.}\SpecialCharTok{{-}}\NormalTok{fixed\_acidity }\SpecialCharTok{+}\NormalTok{ density}\SpecialCharTok{:}\NormalTok{alcohol, }\AttributeTok{data =}\NormalTok{ winequalityred)}
+\NormalTok{interaction3 }\OtherTok{=} \FunctionTok{lm}\NormalTok{(alcohol}\SpecialCharTok{\textasciitilde{}}\NormalTok{.}\SpecialCharTok{{-}}\NormalTok{fixed\_acidity }\SpecialCharTok{+}\NormalTok{ quality}\SpecialCharTok{:}\NormalTok{alcohol, }\AttributeTok{data =}\NormalTok{ winequalityred)}
+
+\FunctionTok{summary}\NormalTok{(interaction2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = alcohol ~ . - fixed_acidity + density:alcohol, data = winequalityred)
+## 
+## Residuals:
+##        Min         1Q     Median         3Q        Max 
+## -0.0133756 -0.0012216 -0.0004968  0.0007313  0.0149670 
+## 
+## Coefficients:
+##                        Estimate Std. Error   t value Pr(>|t|)    
+## (Intercept)           1.090e+01  4.828e-02   225.826  < 2e-16 ***
+## volatile_acidity     -1.307e-03  4.504e-04    -2.901  0.00377 ** 
+## citric_acid          -2.473e-04  5.044e-04    -0.490  0.62406    
+## residual_sugar        2.618e-04  4.919e-05     5.323 1.17e-07 ***
+## chlorides             1.274e-03  1.492e-03     0.854  0.39324    
+## free_sulfur_dioxide  -1.137e-05  7.853e-06    -1.447  0.14802    
+## total_sulfur_dioxide  1.088e-05  2.595e-06     4.190 2.94e-05 ***
+## density              -1.095e+01  4.810e-02  -227.623  < 2e-16 ***
+## pH                    1.591e-03  4.868e-04     3.268  0.00111 ** 
+## sulphates             3.523e-04  4.188e-04     0.841  0.40030    
+## quality               1.015e-04  9.119e-05     1.113  0.26602    
+## alcohol:density       1.004e+00  8.533e-05 11763.560  < 2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.002355 on 1587 degrees of freedom
+## Multiple R-squared:      1,  Adjusted R-squared:      1 
+## F-statistic: 2.975e+07 on 11 and 1587 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(interaction1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = alcohol ~ . - fixed_acidity + residual_sugar:alcohol, 
+##     data = winequalityred)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.96078 -0.26429 -0.01313  0.25479  2.37724 
+## 
+## Coefficients:
+##                          Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)             1.600e+02  8.402e+00  19.040  < 2e-16 ***
+## volatile_acidity        3.653e-01  8.526e-02   4.285 1.94e-05 ***
+## citric_acid             8.466e-01  9.377e-02   9.028  < 2e-16 ***
+## residual_sugar         -2.024e+00  4.773e-02 -42.416  < 2e-16 ***
+## chlorides              -1.435e+00  2.818e-01  -5.092 3.96e-07 ***
+## free_sulfur_dioxide     9.257e-03  1.502e-03   6.161 9.15e-10 ***
+## total_sulfur_dioxide   -4.485e-03  4.850e-04  -9.249  < 2e-16 ***
+## density                -1.541e+02  8.423e+00 -18.300  < 2e-16 ***
+## pH                      6.966e-01  9.110e-02   7.647 3.54e-14 ***
+## sulphates               4.064e-01  7.909e-02   5.138 3.12e-07 ***
+## quality                 1.649e-01  1.688e-02   9.769  < 2e-16 ***
+## alcohol:residual_sugar  2.075e-01  4.392e-03  47.238  < 2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.4483 on 1587 degrees of freedom
+## Multiple R-squared:  0.8243, Adjusted R-squared:  0.823 
+## F-statistic: 676.7 on 11 and 1587 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(interaction3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = alcohol ~ . - fixed_acidity + quality:alcohol, data = winequalityred)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.05929 -0.08398  0.04213  0.07627  0.89927 
+## 
+## Coefficients:
+##                        Estimate Std. Error  t value Pr(>|t|)    
+## (Intercept)          11.7329180  2.9690243    3.952 8.10e-05 ***
+## volatile_acidity     -0.0066739  0.0275363   -0.242  0.80853    
+## citric_acid           0.0303447  0.0308541    0.983  0.32552    
+## residual_sugar        0.0074911  0.0029994    2.498  0.01261 *  
+## chlorides            -0.2881451  0.0909235   -3.169  0.00156 ** 
+## free_sulfur_dioxide   0.0006443  0.0004796    1.343  0.17932    
+## total_sulfur_dioxide -0.0008902  0.0001577   -5.644 1.97e-08 ***
+## density              -1.5330866  2.9907302   -0.513  0.60829    
+## pH                    0.0930417  0.0296545    3.138  0.00174 ** 
+## sulphates             0.0378591  0.0255603    1.481  0.13876    
+## quality              -1.7439837  0.0122314 -142.582  < 2e-16 ***
+## alcohol:quality       0.1647729  0.0008744  188.431  < 2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.1438 on 1587 degrees of freedom
+## Multiple R-squared:  0.9819, Adjusted R-squared:  0.9818 
+## F-statistic:  7831 on 11 and 1587 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\hypertarget{problem-2}{%
+\subsection{Problem 2}\label{problem-2}}
+
+\hypertarget{a.-1}{%
+\subsubsection{a.)}\label{a.-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{crim\_to\_zn }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{zn, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_indus }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{indus, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_chas }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{chas, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_nox }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{nox, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_rm }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{rm, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_age }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{age, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_dis }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{dis, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_rad }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{rad, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_tax }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{tax, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_ptratio }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{ptratio, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_black }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{black, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_lstat }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{lstat, }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{crim\_to\_medv }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{medv, }\AttributeTok{data =}\NormalTok{ boston)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{b.-1}{%
+\subsubsection{b.)}\label{b.-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+
+\FunctionTok{plot}\NormalTok{(crim\_to\_nox)}
+\FunctionTok{mtext}\NormalTok{(}\StringTok{"predictor is nox"}\NormalTok{, }\AttributeTok{side =} \DecValTok{3}\NormalTok{, }\AttributeTok{line =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\AttributeTok{outer =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(crim\_to\_chas)}
+\FunctionTok{mtext}\NormalTok{(}\StringTok{"predictor is chas"}\NormalTok{, }\AttributeTok{side =} \DecValTok{3}\NormalTok{, }\AttributeTok{line =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\AttributeTok{outer =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-6-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(crim\_to\_rm)}
+\FunctionTok{mtext}\NormalTok{(}\StringTok{"predictor is rm"}\NormalTok{, }\AttributeTok{side =} \DecValTok{3}\NormalTok{, }\AttributeTok{line =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\AttributeTok{outer =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-6-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(crim\_to\_dis)}
+\FunctionTok{mtext}\NormalTok{(}\StringTok{"predictor is dis"}\NormalTok{, }\AttributeTok{side =} \DecValTok{3}\NormalTok{, }\AttributeTok{line =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\AttributeTok{outer =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-6-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(crim\_to\_medv)}
+\FunctionTok{mtext}\NormalTok{(}\StringTok{"predictor is medv"}\NormalTok{, }\AttributeTok{side =} \DecValTok{3}\NormalTok{, }\AttributeTok{line =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\AttributeTok{outer =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-6-5.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reg\_nox }\OtherTok{=} \FunctionTok{summary}\NormalTok{(crim\_to\_nox)}\SpecialCharTok{$}\NormalTok{r.squared}
+\NormalTok{reg\_chas }\OtherTok{=} \FunctionTok{summary}\NormalTok{(crim\_to\_chas)}\SpecialCharTok{$}\NormalTok{r.squared}
+\NormalTok{reg\_rm }\OtherTok{=} \FunctionTok{summary}\NormalTok{(crim\_to\_rm)}\SpecialCharTok{$}\NormalTok{r.squared}
+\NormalTok{reg\_dis }\OtherTok{=} \FunctionTok{summary}\NormalTok{(crim\_to\_dis)}\SpecialCharTok{$}\NormalTok{r.squared}
+\NormalTok{reg\_medv }\OtherTok{=} \FunctionTok{summary}\NormalTok{(crim\_to\_medv)}\SpecialCharTok{$}\NormalTok{r.squared}
+
+\FunctionTok{cat}\NormalTok{(reg\_nox, reg\_chas, reg\_rm, reg\_dis, reg\_medv, }\AttributeTok{sep =} \StringTok{" | "}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 0.1772172 | 0.003123869 | 0.04806912 | 0.1441494 | 0.1507805
+\end{verbatim}
+
+\hypertarget{c.-1}{%
+\subsubsection{c.)}\label{c.-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{crim\_to\_all }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{data =}\NormalTok{ boston)}
+\FunctionTok{summary}\NormalTok{(crim\_to\_all)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ ., data = boston)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -9.924 -2.120 -0.353  1.019 75.051 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  17.033228   7.234903   2.354 0.018949 *  
+## zn            0.044855   0.018734   2.394 0.017025 *  
+## indus        -0.063855   0.083407  -0.766 0.444294    
+## chas         -0.749134   1.180147  -0.635 0.525867    
+## nox         -10.313535   5.275536  -1.955 0.051152 .  
+## rm            0.430131   0.612830   0.702 0.483089    
+## age           0.001452   0.017925   0.081 0.935488    
+## dis          -0.987176   0.281817  -3.503 0.000502 ***
+## rad           0.588209   0.088049   6.680 6.46e-11 ***
+## tax          -0.003780   0.005156  -0.733 0.463793    
+## ptratio      -0.271081   0.186450  -1.454 0.146611    
+## black        -0.007538   0.003673  -2.052 0.040702 *  
+## lstat         0.126211   0.075725   1.667 0.096208 .  
+## medv         -0.198887   0.060516  -3.287 0.001087 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 6.439 on 492 degrees of freedom
+## Multiple R-squared:  0.454,  Adjusted R-squared:  0.4396 
+## F-statistic: 31.47 on 13 and 492 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\hypertarget{d.}{%
+\subsubsection{d.)}\label{d.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{simple\_coefficient }\OtherTok{=} \FunctionTok{c}\NormalTok{(crim\_to\_zn}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], crim\_to\_indus}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], crim\_to\_chas}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], }
+\NormalTok{                       crim\_to\_nox}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], crim\_to\_rm}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], crim\_to\_age}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], }
+\NormalTok{                       crim\_to\_dis}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], crim\_to\_rad}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], crim\_to\_tax}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], }
+\NormalTok{                       crim\_to\_ptratio}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], crim\_to\_black}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], crim\_to\_lstat}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{], }
+\NormalTok{                       crim\_to\_medv}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{])}
+\NormalTok{multiple\_coefficient }\OtherTok{=} \FunctionTok{c}\NormalTok{(crim\_to\_all}\SpecialCharTok{$}\NormalTok{coefficients[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{])}
+
+\FunctionTok{plot}\NormalTok{(simple\_coefficient, multiple\_coefficient, }\AttributeTok{main =} \StringTok{"Univariate V.S  Multiple Regression coefficients"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Univariate coefficients"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Multiple coefficients"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assignment-5_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\hypertarget{e.}{%
+\subsubsection{e.)}\label{e.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{poly\_zn }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(zn, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_indus }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(indus, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_nox }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(nox, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_rm }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(rm, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_age }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(age, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_dis }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(dis, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_rad }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(rad, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_tax }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(tax, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_ptratio }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(ptratio, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_black }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(black, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_lstat }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(lstat, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+\NormalTok{poly\_medv }\OtherTok{=} \FunctionTok{lm}\NormalTok{(crim}\SpecialCharTok{\textasciitilde{}}\FunctionTok{poly}\NormalTok{(medv, }\DecValTok{3}\NormalTok{), }\AttributeTok{data =}\NormalTok{ boston)}
+
+\FunctionTok{summary}\NormalTok{(poly\_zn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(zn, 3), data = boston)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -4.821 -4.614 -1.294  0.473 84.130 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    3.6135     0.3722   9.709  < 2e-16 ***
+## poly(zn, 3)1 -38.7498     8.3722  -4.628  4.7e-06 ***
+## poly(zn, 3)2  23.9398     8.3722   2.859  0.00442 ** 
+## poly(zn, 3)3 -10.0719     8.3722  -1.203  0.22954    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 8.372 on 502 degrees of freedom
+## Multiple R-squared:  0.05824,    Adjusted R-squared:  0.05261 
+## F-statistic: 10.35 on 3 and 502 DF,  p-value: 1.281e-06
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_indus)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(indus, 3), data = boston)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -8.278 -2.514  0.054  0.764 79.713 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)        3.614      0.330  10.950  < 2e-16 ***
+## poly(indus, 3)1   78.591      7.423  10.587  < 2e-16 ***
+## poly(indus, 3)2  -24.395      7.423  -3.286  0.00109 ** 
+## poly(indus, 3)3  -54.130      7.423  -7.292  1.2e-12 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7.423 on 502 degrees of freedom
+## Multiple R-squared:  0.2597, Adjusted R-squared:  0.2552 
+## F-statistic: 58.69 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_nox)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(nox, 3), data = boston)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -9.110 -2.068 -0.255  0.739 78.302 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)     3.6135     0.3216  11.237  < 2e-16 ***
+## poly(nox, 3)1  81.3720     7.2336  11.249  < 2e-16 ***
+## poly(nox, 3)2 -28.8286     7.2336  -3.985 7.74e-05 ***
+## poly(nox, 3)3 -60.3619     7.2336  -8.345 6.96e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7.234 on 502 degrees of freedom
+## Multiple R-squared:  0.297,  Adjusted R-squared:  0.2928 
+## F-statistic: 70.69 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_rm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(rm, 3), data = boston)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -18.485  -3.468  -2.221  -0.015  87.219 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    3.6135     0.3703   9.758  < 2e-16 ***
+## poly(rm, 3)1 -42.3794     8.3297  -5.088 5.13e-07 ***
+## poly(rm, 3)2  26.5768     8.3297   3.191  0.00151 ** 
+## poly(rm, 3)3  -5.5103     8.3297  -0.662  0.50858    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 8.33 on 502 degrees of freedom
+## Multiple R-squared:  0.06779,    Adjusted R-squared:  0.06222 
+## F-statistic: 12.17 on 3 and 502 DF,  p-value: 1.067e-07
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_age)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(age, 3), data = boston)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -9.762 -2.673 -0.516  0.019 82.842 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)     3.6135     0.3485  10.368  < 2e-16 ***
+## poly(age, 3)1  68.1820     7.8397   8.697  < 2e-16 ***
+## poly(age, 3)2  37.4845     7.8397   4.781 2.29e-06 ***
+## poly(age, 3)3  21.3532     7.8397   2.724  0.00668 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7.84 on 502 degrees of freedom
+## Multiple R-squared:  0.1742, Adjusted R-squared:  0.1693 
+## F-statistic: 35.31 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_dis)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(dis, 3), data = boston)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -10.757  -2.588   0.031   1.267  76.378 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)     3.6135     0.3259  11.087  < 2e-16 ***
+## poly(dis, 3)1 -73.3886     7.3315 -10.010  < 2e-16 ***
+## poly(dis, 3)2  56.3730     7.3315   7.689 7.87e-14 ***
+## poly(dis, 3)3 -42.6219     7.3315  -5.814 1.09e-08 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7.331 on 502 degrees of freedom
+## Multiple R-squared:  0.2778, Adjusted R-squared:  0.2735 
+## F-statistic: 64.37 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_rad)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(rad, 3), data = boston)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -10.381  -0.412  -0.269   0.179  76.217 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)     3.6135     0.2971  12.164  < 2e-16 ***
+## poly(rad, 3)1 120.9074     6.6824  18.093  < 2e-16 ***
+## poly(rad, 3)2  17.4923     6.6824   2.618  0.00912 ** 
+## poly(rad, 3)3   4.6985     6.6824   0.703  0.48231    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 6.682 on 502 degrees of freedom
+## Multiple R-squared:    0.4,  Adjusted R-squared:  0.3965 
+## F-statistic: 111.6 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_tax)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(tax, 3), data = boston)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -13.273  -1.389   0.046   0.536  76.950 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)     3.6135     0.3047  11.860  < 2e-16 ***
+## poly(tax, 3)1 112.6458     6.8537  16.436  < 2e-16 ***
+## poly(tax, 3)2  32.0873     6.8537   4.682 3.67e-06 ***
+## poly(tax, 3)3  -7.9968     6.8537  -1.167    0.244    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 6.854 on 502 degrees of freedom
+## Multiple R-squared:  0.3689, Adjusted R-squared:  0.3651 
+## F-statistic:  97.8 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_ptratio)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(ptratio, 3), data = boston)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -6.833 -4.146 -1.655  1.408 82.697 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)          3.614      0.361  10.008  < 2e-16 ***
+## poly(ptratio, 3)1   56.045      8.122   6.901 1.57e-11 ***
+## poly(ptratio, 3)2   24.775      8.122   3.050  0.00241 ** 
+## poly(ptratio, 3)3  -22.280      8.122  -2.743  0.00630 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 8.122 on 502 degrees of freedom
+## Multiple R-squared:  0.1138, Adjusted R-squared:  0.1085 
+## F-statistic: 21.48 on 3 and 502 DF,  p-value: 4.171e-13
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_black)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(black, 3), data = boston)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -13.096  -2.343  -2.128  -1.439  86.790 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)       3.6135     0.3536  10.218   <2e-16 ***
+## poly(black, 3)1 -74.4312     7.9546  -9.357   <2e-16 ***
+## poly(black, 3)2   5.9264     7.9546   0.745    0.457    
+## poly(black, 3)3  -4.8346     7.9546  -0.608    0.544    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7.955 on 502 degrees of freedom
+## Multiple R-squared:  0.1498, Adjusted R-squared:  0.1448 
+## F-statistic: 29.49 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_lstat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(lstat, 3), data = boston)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -15.234  -2.151  -0.486   0.066  83.353 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)       3.6135     0.3392  10.654   <2e-16 ***
+## poly(lstat, 3)1  88.0697     7.6294  11.543   <2e-16 ***
+## poly(lstat, 3)2  15.8882     7.6294   2.082   0.0378 *  
+## poly(lstat, 3)3 -11.5740     7.6294  -1.517   0.1299    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 7.629 on 502 degrees of freedom
+## Multiple R-squared:  0.2179, Adjusted R-squared:  0.2133 
+## F-statistic: 46.63 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(poly\_medv)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = crim ~ poly(medv, 3), data = boston)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -24.427  -1.976  -0.437   0.439  73.655 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)       3.614      0.292  12.374  < 2e-16 ***
+## poly(medv, 3)1  -75.058      6.569 -11.426  < 2e-16 ***
+## poly(medv, 3)2   88.086      6.569  13.409  < 2e-16 ***
+## poly(medv, 3)3  -48.033      6.569  -7.312 1.05e-12 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 6.569 on 502 degrees of freedom
+## Multiple R-squared:  0.4202, Adjusted R-squared:  0.4167 
+## F-statistic: 121.3 on 3 and 502 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\hypertarget{problem-3}{%
+\subsection{Problem 3}\label{problem-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b0 }\OtherTok{=} \SpecialCharTok{{-}}\DecValTok{8}
+\NormalTok{b1 }\OtherTok{=} \FloatTok{0.1}
+\NormalTok{b2 }\OtherTok{=} \DecValTok{1}
+\NormalTok{b3 }\OtherTok{=} \SpecialCharTok{{-}}\FloatTok{0.4}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a.-2}{%
+\subsubsection{a.)}\label{a.-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{h }\OtherTok{=} \DecValTok{32}
+\NormalTok{gpa }\OtherTok{=} \FloatTok{3.0}
+\NormalTok{psqi }\OtherTok{=} \DecValTok{11}
+\NormalTok{y }\OtherTok{=}\NormalTok{ b0 }\SpecialCharTok{+}\NormalTok{ (b1 }\SpecialCharTok{*}\NormalTok{ h) }\SpecialCharTok{+}\NormalTok{ (b2 }\SpecialCharTok{*}\NormalTok{ gpa) }\SpecialCharTok{+}\NormalTok{ (b3 }\SpecialCharTok{*}\NormalTok{ psqi)}
+\NormalTok{prob }\OtherTok{=} \FunctionTok{exp}\NormalTok{(y) }\SpecialCharTok{/}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{+} \FunctionTok{exp}\NormalTok{(y))}
+\NormalTok{prob}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.00202532
+\end{verbatim}
+
+\hypertarget{b.-2}{%
+\subsubsection{b.)}\label{b.-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{h2 }\OtherTok{=} \DecValTok{10} \SpecialCharTok{*} \FunctionTok{log}\NormalTok{(}\DecValTok{13} \SpecialCharTok{/} \DecValTok{7}\NormalTok{) }\SpecialCharTok{+} \FloatTok{5.44} \SpecialCharTok{*} \DecValTok{10}
+\NormalTok{h2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 60.59039
+\end{verbatim}
+
+\hypertarget{c.-2}{%
+\subsubsection{c.)}\label{c.-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{h3 }\OtherTok{=} \DecValTok{10} \SpecialCharTok{*} \FunctionTok{log}\NormalTok{(}\DecValTok{3} \SpecialCharTok{/} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}\NormalTok{ (}\DecValTok{5} \SpecialCharTok{+}\NormalTok{ (}\DecValTok{3} \SpecialCharTok{*} \FloatTok{0.04}\NormalTok{)) }\SpecialCharTok{*} \DecValTok{10}
+\NormalTok{h3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 55.25465
+\end{verbatim}
+
+\hypertarget{problem-4}{%
+\subsection{Problem 4}\label{problem-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tokenizers)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(SnowballC)}
+\FunctionTok{library}\NormalTok{(tm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: NLP
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'NLP'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:ggplot2':
+## 
+##     annotate
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(caret)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: lattice
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'caret'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:purrr':
+## 
+##     lift
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(e1071)}
+\FunctionTok{library}\NormalTok{(gmodels)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{a.-3}{%
+\subsubsection{a.)}\label{a.-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bbc}\SpecialCharTok{$}\NormalTok{category }\OtherTok{=} \FunctionTok{as.factor}\NormalTok{(bbc}\SpecialCharTok{$}\NormalTok{category)}
+\FunctionTok{head}\NormalTok{(bbc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   category
+## 1 business
+## 2 business
+## 3 business
+## 4 business
+## 5 business
+## 6 business
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         text
+## 1 Ad sales boost Time Warner profit\n\nQuarterly profits at US media giant TimeWarner jumped 76% to $1.13bn (£600m) for the three months to December, from $639m year-earlier.\n\nThe firm, which is now one of the biggest investors in Google, benefited from sales of high-speed internet connections and higher advert sales. TimeWarner said fourth quarter sales rose 2% to $11.1bn from $10.9bn. Its profits were buoyed by one-off gains which offset a profit dip at Warner Bros, and less users for AOL.\n\nTime Warner said on Friday that it now owns 8% of search-engine Google. But its own internet business, AOL, had has mixed fortunes. It lost 464,000 subscribers in the fourth quarter profits were lower than in the preceding three quarters. However, the company said AOL's underlying profit before exceptional items rose 8% on the back of stronger internet advertising revenues. It hopes to increase subscribers by offering the online service free to TimeWarner internet customers and will try to sign up AOL's existing customers for high-speed broadband. TimeWarner also has to restate 2000 and 2003 results following a probe by the US Securities Exchange Commission (SEC), which is close to concluding.\n\nTime Warner's fourth quarter profits were slightly better than analysts' expectations. But its film division saw profits slump 27% to $284m, helped by box-office flops Alexander and Catwoman, a sharp contrast to year-earlier, when the third and final film in the Lord of the Rings trilogy boosted results. For the full-year, TimeWarner posted a profit of $3.36bn, up 27% from its 2003 performance, while revenues grew 6.4% to $42.09bn. "Our financial performance was strong, meeting or exceeding all of our full-year objectives and greatly enhancing our flexibility," chairman and chief executive Richard Parsons said. For 2005, TimeWarner is projecting operating earnings growth of around 5%, and also expects higher revenue and wider profit margins.\n\nTimeWarner is to restate its accounts as part of efforts to resolve an inquiry into AOL by US market regulators. It has already offered to pay $300m to settle charges, in a deal that is under review by the SEC. The company said it was unable to estimate the amount it needed to set aside for legal reserves, which it previously set at $500m. It intends to adjust the way it accounts for a deal with German music publisher Bertelsmann's purchase of a stake in AOL Europe, which it had reported as advertising revenue. It will now book the sale of its stake in AOL Europe as a loss on the value of that stake.\n
+## 2                                                                                                                                                                                                                                                                                                                        Dollar gains on Greenspan speech\n\nThe dollar has hit its highest level against the euro in almost three months after the Federal Reserve head said the US trade deficit is set to stabilise.\n\nAnd Alan Greenspan highlighted the US government's willingness to curb spending and rising household savings as factors which may help to reduce it. In late trading in New York, the dollar reached $1.2871 against the euro, from $1.2974 on Thursday. Market concerns about the deficit has hit the greenback in recent months. On Friday, Federal Reserve chairman Mr Greenspan's speech in London ahead of the meeting of G7 finance ministers sent the dollar higher after it had earlier tumbled on the back of worse-than-expected US jobs data. "I think the chairman's taking a much more sanguine view on the current account deficit than he's taken for some time," said Robert Sinche, head of currency strategy at Bank of America in New York. "He's taking a longer-term view, laying out a set of conditions under which the current account deficit can improve this year and next."\n\nWorries about the deficit concerns about China do, however, remain. China's currency remains pegged to the dollar and the US currency's sharp falls in recent months have therefore made Chinese export prices highly competitive. But calls for a shift in Beijing's policy have fallen on deaf ears, despite recent comments in a major Chinese newspaper that the "time is ripe" for a loosening of the peg. The G7 meeting is thought unlikely to produce any meaningful movement in Chinese policy. In the meantime, the US Federal Reserve's decision on 2 February to boost interest rates by a quarter of a point - the sixth such move in as many months - has opened up a differential with European rates. The half-point window, some believe, could be enough to keep US assets looking more attractive, and could help prop up the dollar. The recent falls have partly been the result of big budget deficits, as well as the US's yawning current account gap, both of which need to be funded by the buying of US bonds and assets by foreign firms and governments. The White House will announce its budget on Monday, and many commentators believe the deficit will remain at close to half a trillion dollars.\n
+## 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Yukos unit buyer faces loan claim\n\nThe owners of embattled Russian oil giant Yukos are to ask the buyer of its former production unit to pay back a $900m (£479m) loan.\n\nState-owned Rosneft bought the Yugansk unit for $9.3bn in a sale forced by Russia to part settle a $27.5bn tax claim against Yukos. Yukos' owner Menatep Group says it will ask Rosneft to repay a loan that Yugansk had secured on its assets. Rosneft already faces a similar $540m repayment demand from foreign banks. Legal experts said Rosneft's purchase of Yugansk would include such obligations. "The pledged assets are with Rosneft, so it will have to pay real money to the creditors to avoid seizure of Yugansk assets," said Moscow-based US lawyer Jamie Firestone, who is not connected to the case. Menatep Group's managing director Tim Osborne told the Reuters news agency: "If they default, we will fight them where the rule of law exists under the international arbitration clauses of the credit."\n\nRosneft officials were unavailable for comment. But the company has said it intends to take action against Menatep to recover some of the tax claims and debts owed by Yugansk. Yukos had filed for bankruptcy protection in a US court in an attempt to prevent the forced sale of its main production arm. The sale went ahead in December and Yugansk was sold to a little-known shell company which in turn was bought by Rosneft. Yukos claims its downfall was punishment for the political ambitions of its founder Mikhail Khodorkovsky and has vowed to sue any participant in the sale.\n
+## 4                                                                                                                                                               High fuel prices hit BA's profits\n\nBritish Airways has blamed high fuel prices for a 40% drop in profits.\n\nReporting its results for the three months to 31 December 2004, the airline made a pre-tax profit of £75m ($141m) compared with £125m a year earlier. Rod Eddington, BA's chief executive, said the results were "respectable" in a third quarter when fuel costs rose by £106m or 47.3%. BA's profits were still better than market expectation of £59m, and it expects a rise in full-year revenues.\n\nTo help offset the increased price of aviation fuel, BA last year introduced a fuel surcharge for passengers.\n\nIn October, it increased this from £6 to £10 one-way for all long-haul flights, while the short-haul surcharge was raised from £2.50 to £4 a leg. Yet aviation analyst Mike Powell of Dresdner Kleinwort Wasserstein says BA's estimated annual surcharge revenues - £160m - will still be way short of its additional fuel costs - a predicted extra £250m. Turnover for the quarter was up 4.3% to £1.97bn, further benefiting from a rise in cargo revenue. Looking ahead to its full year results to March 2005, BA warned that yields - average revenues per passenger - were expected to decline as it continues to lower prices in the face of competition from low-cost carriers. However, it said sales would be better than previously forecast. "For the year to March 2005, the total revenue outlook is slightly better than previous guidance with a 3% to 3.5% improvement anticipated," BA chairman Martin Broughton said. BA had previously forecast a 2% to 3% rise in full-year revenue.\n\nIt also reported on Friday that passenger numbers rose 8.1% in January. Aviation analyst Nick Van den Brul of BNP Paribas described BA's latest quarterly results as "pretty modest". "It is quite good on the revenue side and it shows the impact of fuel surcharges and a positive cargo development, however, operating margins down and cost impact of fuel are very strong," he said. Since the 11 September 2001 attacks in the United States, BA has cut 13,000 jobs as part of a major cost-cutting drive. "Our focus remains on reducing controllable costs and debt whilst continuing to invest in our products," Mr Eddington said. "For example, we have taken delivery of six Airbus A321 aircraft and next month we will start further improvements to our Club World flat beds." BA's shares closed up four pence at 274.5 pence.\n
+## 5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Pernod takeover talk lifts Domecq\n\nShares in UK drinks and food firm Allied Domecq have risen on speculation that it could be the target of a takeover by France's Pernod Ricard.\n\nReports in the Wall Street Journal and the Financial Times suggested that the French spirits firm is considering a bid, but has yet to contact its target. Allied Domecq shares in London rose 4% by 1200 GMT, while Pernod shares in Paris slipped 1.2%. Pernod said it was seeking acquisitions but refused to comment on specifics.\n\nPernod's last major purchase was a third of US giant Seagram in 2000, the move which propelled it into the global top three of drinks firms. The other two-thirds of Seagram was bought by market leader Diageo. In terms of market value, Pernod - at 7.5bn euros ($9.7bn) - is about 9% smaller than Allied Domecq, which has a capitalisation of £5.7bn ($10.7bn; 8.2bn euros). Last year Pernod tried to buy Glenmorangie, one of Scotland's premier whisky firms, but lost out to luxury goods firm LVMH. Pernod is home to brands including Chivas Regal Scotch whisky, Havana Club rum and Jacob's Creek wine. Allied Domecq's big names include Malibu rum, Courvoisier brandy, Stolichnaya vodka and Ballantine's whisky - as well as snack food chains such as Dunkin' Donuts and Baskin-Robbins ice cream. The WSJ said that the two were ripe for consolidation, having each dealt with problematic parts of their portfolio. Pernod has reduced the debt it took on to fund the Seagram purchase to just 1.8bn euros, while Allied has improved the performance of its fast-food chains.\n
+## 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Japan narrowly escapes recession\n\nJapan's economy teetered on the brink of a technical recession in the three months to September, figures show.\n\nRevised figures indicated growth of just 0.1% - and a similar-sized contraction in the previous quarter. On an annual basis, the data suggests annual growth of just 0.2%, suggesting a much more hesitant recovery than had previously been thought. A common technical definition of a recession is two successive quarters of negative growth.\n\nThe government was keen to play down the worrying implications of the data. "I maintain the view that Japan's economy remains in a minor adjustment phase in an upward climb, and we will monitor developments carefully," said economy minister Heizo Takenaka. But in the face of the strengthening yen making exports less competitive and indications of weakening economic conditions ahead, observers were less sanguine. "It's painting a picture of a recovery... much patchier than previously thought," said Paul Sheard, economist at Lehman Brothers in Tokyo. Improvements in the job market apparently have yet to feed through to domestic demand, with private consumption up just 0.2% in the third quarter.\n
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bbc }\OtherTok{=} \FunctionTok{na.omit}\NormalTok{(bbc)}
+
+\NormalTok{token}\OtherTok{=} \FunctionTok{VCorpus}\NormalTok{(}\FunctionTok{VectorSource}\NormalTok{(bbc}\SpecialCharTok{$}\NormalTok{text)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tm\_map}\NormalTok{(removeNumbers) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tm\_map}\NormalTok{(removePunctuation) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tm\_map}\NormalTok{(stripWhitespace) }\SpecialCharTok{\%\textgreater{}\%}  
+  \FunctionTok{tm\_map}\NormalTok{(}\FunctionTok{content\_transformer}\NormalTok{(tolower)) }\SpecialCharTok{\%\textgreater{}\%}　
+  \FunctionTok{tm\_map}\NormalTok{(removeWords, }\FunctionTok{stopwords}\NormalTok{(}\StringTok{"english"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{tm\_map}\NormalTok{(stemDocument) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{DocumentTermMatrix}\NormalTok{(}\AttributeTok{control =} \FunctionTok{list}\NormalTok{(}\AttributeTok{wordLengths =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\ConstantTok{Inf}\NormalTok{))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{removeSparseTerms}\NormalTok{(}\FloatTok{0.9}\NormalTok{)}
+\FunctionTok{inspect}\NormalTok{(token)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <<DocumentTermMatrix (documents: 2225, terms: 274)>>
+## Non-/sparse entries: 105796/503854
+## Sparsity           : 83%
+## Maximal term length: 9
+## Weighting          : term frequency (tf)
+## Sample             :
+##       Terms
+## Docs   also game mr new one peopl said us will year
+##   1146    1    0  0   1   4     3    1  3   32    2
+##   1186    4    0 26  18  16    25    2 14   30   11
+##   1189    4    0 13   8  11    11   10  2   14    1
+##   1276    3    0  8   2   8    26   11  8   40   15
+##   1684    1   19  0  34   2     0    2  0    0    3
+##   1804    1   19  0   0   6     0    0  0    1    0
+##   2225    0   67  0   2   7    15    2  3    5    9
+##   763     2    1  1   1   7    11    1  8   19   40
+##   766     3    0  0   4   3    18    2  3    0    3
+##   863     1    1  2  10   6     8    1  1   11    5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{token\_df }\OtherTok{=} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{as.matrix}\NormalTok{(token), }\AttributeTok{stringsAsFactors =} \ConstantTok{FALSE}\NormalTok{)}
+
+\NormalTok{loc }\OtherTok{=}\NormalTok{ (}\FunctionTok{which}\NormalTok{(token\_df[}\DecValTok{2100}\NormalTok{,] }\SpecialCharTok{\textgreater{}} \DecValTok{4}\NormalTok{))}
+\NormalTok{token\_df[}\DecValTok{2100}\NormalTok{, loc]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      game industri mr play said will
+## 2100   20        5  5    6   12    5
+\end{verbatim}
+
+\hypertarget{b.-3}{%
+\subsubsection{b.)}\label{b.-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{correlation }\OtherTok{=} \FunctionTok{cor}\NormalTok{(token\_df) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{findCorrelation}\NormalTok{(}\AttributeTok{cutoff =} \FloatTok{0.5}\NormalTok{)}
+\NormalTok{correlation}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 114 176 183 242  38  64  22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{token }\OtherTok{=}\NormalTok{ token[, }\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(correlation)]}
+\FunctionTok{inspect}\NormalTok{(token)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <<DocumentTermMatrix (documents: 2225, terms: 267)>>
+## Non-/sparse entries: 103215/490860
+## Sparsity           : 83%
+## Maximal term length: 9
+## Weighting          : term frequency (tf)
+## Sample             :
+##       Terms
+## Docs   also game mr new one peopl said us will year
+##   1186    4    0 26  18  16    25    2 14   30   11
+##   1189    4    0 13   8  11    11   10  2   14    1
+##   1276    3    0  8   2   8    26   11  8   40   15
+##   1434    5    0  0   7   0     0    4  2   14    1
+##   1684    1   19  0  34   2     0    2  0    0    3
+##   1804    1   19  0   0   6     0    0  0    1    0
+##   2225    0   67  0   2   7    15    2  3    5    9
+##   763     2    1  1   1   7    11    1  8   19   40
+##   766     3    0  0   4   3    18    2  3    0    3
+##   863     1    1  2  10   6     8    1  1   11    5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{index }\OtherTok{=} \FunctionTok{createDataPartition}\NormalTok{(bbc}\SpecialCharTok{$}\NormalTok{category, }\AttributeTok{p =} \FloatTok{0.85}\NormalTok{, }\AttributeTok{list =} \ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{train }\OtherTok{=}\NormalTok{ bbc[index,]}
+\NormalTok{train\_label }\OtherTok{=}\NormalTok{ train}\SpecialCharTok{$}\NormalTok{category}
+\NormalTok{prop\_train }\OtherTok{=} \FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(train}\SpecialCharTok{$}\NormalTok{category))}
+\NormalTok{prop\_train}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##      business entertainment      politics         sport          tech 
+##     0.2291447     0.1737064     0.1874340     0.2296727     0.1800422
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(prop\_train)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\OtherTok{=}\NormalTok{ bbc[}\SpecialCharTok{{-}}\NormalTok{index,]}
+\NormalTok{test\_label }\OtherTok{=}\NormalTok{ test}\SpecialCharTok{$}\NormalTok{category}
+\NormalTok{prop\_test }\OtherTok{=} \FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(test}\SpecialCharTok{$}\NormalTok{category))}
+\NormalTok{prop\_test}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##      business entertainment      politics         sport          tech 
+##     0.2296073     0.1722054     0.1873112     0.2296073     0.1812689
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(prop\_test)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{train\_token }\OtherTok{=}\NormalTok{ token[index,]}
+\NormalTok{test\_token }\OtherTok{=}\NormalTok{ token[}\SpecialCharTok{{-}}\NormalTok{index,]}
+\NormalTok{freq }\OtherTok{=} \FunctionTok{findFreqTerms}\NormalTok{(train\_token, }\DecValTok{10}\NormalTok{)}
+\NormalTok{train\_token }\OtherTok{=}\NormalTok{ train\_token[, freq]}
+\NormalTok{test\_token }\OtherTok{=}\NormalTok{ test\_token[, freq]}
+\NormalTok{train\_token }\OtherTok{=} \FunctionTok{apply}\NormalTok{(train\_token, }\AttributeTok{MARGIN =} \DecValTok{2}\NormalTok{, }\ControlFlowTok{function}\NormalTok{(x)\{x }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(x }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{, }\StringTok{"Yes"}\NormalTok{, }\StringTok{"No"}\NormalTok{)\})}
+\NormalTok{test\_token }\OtherTok{=} \FunctionTok{apply}\NormalTok{(test\_token, }\AttributeTok{MARGIN =} \DecValTok{2}\NormalTok{, }\ControlFlowTok{function}\NormalTok{(x)\{x }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(x }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{, }\StringTok{"Yes"}\NormalTok{, }\StringTok{"No"}\NormalTok{)\})}
+
+\NormalTok{classifier }\OtherTok{=} \FunctionTok{naiveBayes}\NormalTok{(train\_token, train\_label, }\AttributeTok{laplace =} \DecValTok{1}\NormalTok{)}
+\NormalTok{predictor }\OtherTok{=} \FunctionTok{predict}\NormalTok{(classifier, test\_token)}
+\FunctionTok{CrossTable}\NormalTok{(predictor, test\_label, }\AttributeTok{prop.chisq =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{prop.t =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{prop.r =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{dnn =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}predicted\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}actual\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  
+##    Cell Contents
+## |-------------------------|
+## |                       N |
+## |           N / Col Total |
+## |-------------------------|
+## 
+##  
+## Total Observations in Table:  331 
+## 
+##  
+##               | actual 
+##     predicted |      business | entertainment |      politics |         sport |          tech |     Row Total | 
+## --------------|---------------|---------------|---------------|---------------|---------------|---------------|
+##      business |            64 |             3 |             3 |             2 |             4 |            76 | 
+##               |         0.842 |         0.053 |         0.048 |         0.026 |         0.067 |               | 
+## --------------|---------------|---------------|---------------|---------------|---------------|---------------|
+## entertainment |             3 |            49 |             3 |             3 |             3 |            61 | 
+##               |         0.039 |         0.860 |         0.048 |         0.039 |         0.050 |               | 
+## --------------|---------------|---------------|---------------|---------------|---------------|---------------|
+##      politics |             5 |             1 |            56 |             1 |             0 |            63 | 
+##               |         0.066 |         0.018 |         0.903 |         0.013 |         0.000 |               | 
+## --------------|---------------|---------------|---------------|---------------|---------------|---------------|
+##         sport |             0 |             0 |             0 |            70 |             0 |            70 | 
+##               |         0.000 |         0.000 |         0.000 |         0.921 |         0.000 |               | 
+## --------------|---------------|---------------|---------------|---------------|---------------|---------------|
+##          tech |             4 |             4 |             0 |             0 |            53 |            61 | 
+##               |         0.053 |         0.070 |         0.000 |         0.000 |         0.883 |               | 
+## --------------|---------------|---------------|---------------|---------------|---------------|---------------|
+##  Column Total |            76 |            57 |            62 |            76 |            60 |           331 | 
+##               |         0.230 |         0.172 |         0.187 |         0.230 |         0.181 |               | 
+## --------------|---------------|---------------|---------------|---------------|---------------|---------------|
+## 
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{confusion }\OtherTok{=} \FunctionTok{confusionMatrix}\NormalTok{(predictor, test\_label)}
+\NormalTok{confusion}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Confusion Matrix and Statistics
+## 
+##                Reference
+## Prediction      business entertainment politics sport tech
+##   business            64             3        3     2    4
+##   entertainment        3            49        3     3    3
+##   politics             5             1       56     1    0
+##   sport                0             0        0    70    0
+##   tech                 4             4        0     0   53
+## 
+## Overall Statistics
+##                                           
+##                Accuracy : 0.8822          
+##                  95% CI : (0.8425, 0.9149)
+##     No Information Rate : 0.2296          
+##     P-Value [Acc > NIR] : < 2.2e-16       
+##                                           
+##                   Kappa : 0.8523          
+##                                           
+##  Mcnemar's Test P-Value : NA              
+## 
+## Statistics by Class:
+## 
+##                      Class: business Class: entertainment Class: politics
+## Sensitivity                   0.8421               0.8596          0.9032
+## Specificity                   0.9529               0.9562          0.9740
+## Pos Pred Value                0.8421               0.8033          0.8889
+## Neg Pred Value                0.9529               0.9704          0.9776
+## Prevalence                    0.2296               0.1722          0.1873
+## Detection Rate                0.1934               0.1480          0.1692
+## Detection Prevalence          0.2296               0.1843          0.1903
+## Balanced Accuracy             0.8975               0.9079          0.9386
+##                      Class: sport Class: tech
+## Sensitivity                0.9211      0.8833
+## Specificity                1.0000      0.9705
+## Pos Pred Value             1.0000      0.8689
+## Neg Pred Value             0.9770      0.9741
+## Prevalence                 0.2296      0.1813
+## Detection Rate             0.2115      0.1601
+## Detection Prevalence       0.2115      0.1843
+## Balanced Accuracy          0.9605      0.9269
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{confusion\_table }\OtherTok{=} \FunctionTok{as.table}\NormalTok{(confusion)}
+\FunctionTok{print}\NormalTok{(confusion\_table[}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 64
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{precision }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(matrix, position)}
+\NormalTok{\{}
+\NormalTok{  tp }\OtherTok{=}\NormalTok{ matrix[position, position]}
+\NormalTok{  fp }\OtherTok{=} \FunctionTok{sum}\NormalTok{(matrix[position, }\SpecialCharTok{{-}}\NormalTok{position])}
+\NormalTok{  p }\OtherTok{=}\NormalTok{ tp }\SpecialCharTok{/}\NormalTok{ (tp }\SpecialCharTok{+}\NormalTok{ fp)}
+  \FunctionTok{return}\NormalTok{ (p }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+\NormalTok{\}}
+
+\NormalTok{recall }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(matrix, position)}
+\NormalTok{\{}
+\NormalTok{  tp }\OtherTok{=}\NormalTok{ matrix[position, position]}
+\NormalTok{  fn }\OtherTok{=} \FunctionTok{sum}\NormalTok{(matrix[}\SpecialCharTok{{-}}\NormalTok{position, position])}
+\NormalTok{  r }\OtherTok{=}\NormalTok{ tp }\SpecialCharTok{/}\NormalTok{ (tp }\SpecialCharTok{+}\NormalTok{ fn)}
+  \FunctionTok{return}\NormalTok{ (r }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+\NormalTok{\}}
+
+\NormalTok{Topics }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"Business"}\NormalTok{, }\StringTok{"Entertainment"}\NormalTok{, }\StringTok{"Politics"}\NormalTok{, }\StringTok{"Sport"}\NormalTok{, }\StringTok{"Tech"}\NormalTok{)}
+\NormalTok{Precisions }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\FunctionTok{round}\NormalTok{(}\FunctionTok{precision}\NormalTok{(confusion\_table, }\DecValTok{1}\NormalTok{), }\DecValTok{2}\NormalTok{), }\FunctionTok{round}\NormalTok{(}\FunctionTok{precision}\NormalTok{(confusion\_table, }\DecValTok{2}\NormalTok{), }\DecValTok{2}\NormalTok{), }
+               \FunctionTok{round}\NormalTok{(}\FunctionTok{precision}\NormalTok{(confusion\_table, }\DecValTok{3}\NormalTok{), }\DecValTok{2}\NormalTok{), }\FunctionTok{round}\NormalTok{(}\FunctionTok{precision}\NormalTok{(confusion\_table, }\DecValTok{4}\NormalTok{), }\DecValTok{2}\NormalTok{), }
+               \FunctionTok{round}\NormalTok{(}\FunctionTok{precision}\NormalTok{(confusion\_table, }\DecValTok{5}\NormalTok{), }\DecValTok{2}\NormalTok{))}
+\NormalTok{Recalls }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\FunctionTok{round}\NormalTok{(}\FunctionTok{recall}\NormalTok{(confusion\_table, }\DecValTok{1}\NormalTok{), }\DecValTok{2}\NormalTok{), }\FunctionTok{round}\NormalTok{(}\FunctionTok{recall}\NormalTok{(confusion\_table, }\DecValTok{2}\NormalTok{), }\DecValTok{2}\NormalTok{),}
+            \FunctionTok{round}\NormalTok{(}\FunctionTok{recall}\NormalTok{(confusion\_table, }\DecValTok{3}\NormalTok{), }\DecValTok{2}\NormalTok{), }\FunctionTok{round}\NormalTok{(}\FunctionTok{recall}\NormalTok{(confusion\_table, }\DecValTok{4}\NormalTok{), }\DecValTok{2}\NormalTok{), }
+            \FunctionTok{round}\NormalTok{(}\FunctionTok{recall}\NormalTok{(confusion\_table, }\DecValTok{5}\NormalTok{), }\DecValTok{2}\NormalTok{))}
+\NormalTok{pres\_rec }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(Topics, Precisions, Recalls)}
+\NormalTok{pres\_rec}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          Topics Precisions Recalls
+## 1      Business      84.21   84.21
+## 2 Entertainment      80.33   85.96
+## 3      Politics      88.89   90.32
+## 4         Sport     100.00   92.11
+## 5          Tech      86.89   88.33
+\end{verbatim}
+
+\end{document}

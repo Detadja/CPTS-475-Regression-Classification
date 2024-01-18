@@ -1,0 +1,231 @@
+library(tidyverse)
+
+winequalityred = read.csv("winequality-red.csv", sep = ",", header = TRUE)
+boston = read.csv("boston.csv", sep = ",", header = TRUE)
+bbc = read.csv("bbc.csv", sep = ",", header = TRUE)
+
+
+
+# 1.)
+linear_reg = lm(pH~.-fixed_acidity, data = winequalityred)
+summary(linear_reg)
+
+
+plot(linear_reg)
+
+
+interaction1 = lm(alcohol~.-fixed_acidity + residual_sugar:alcohol, data = winequalityred)
+interaction2 = lm(alcohol~.-fixed_acidity + density:alcohol, data = winequalityred)
+interaction3 = lm(alcohol~.-fixed_acidity + quality:alcohol, data = winequalityred)
+
+summary(interaction1)
+summary(interaction2)
+summary(interaction3)
+
+
+
+# 2.)
+crim_to_zn = lm(crim~zn, data = boston)
+crim_to_indus = lm(crim~indus, data = boston)
+crim_to_chas = lm(crim~chas, data = boston)
+crim_to_nox = lm(crim~nox, data = boston)
+crim_to_rm = lm(crim~rm, data = boston)
+crim_to_age = lm(crim~age, data = boston)
+crim_to_dis = lm(crim~dis, data = boston)
+crim_to_rad = lm(crim~rad, data = boston)
+crim_to_tax = lm(crim~tax, data = boston)
+crim_to_ptratio = lm(crim~ptratio, data = boston)
+crim_to_black = lm(crim~black, data = boston)
+crim_to_lstat = lm(crim~lstat, data = boston)
+crim_to_medv = lm(crim~medv, data = boston)
+
+
+par(mfrow = c(2,2))
+
+plot(crim_to_nox)
+mtext("predictor is nox", side = 3, line = -1, col='blue', outer = TRUE)
+
+plot(crim_to_chas)
+mtext("predictor is chas", side = 3, line = -1, col='blue', outer = TRUE)
+
+plot(crim_to_rm)
+mtext("predictor is rm", side = 3, line = -1, col='blue', outer = TRUE)
+
+plot(crim_to_dis)
+mtext("predictor is dis", side = 3, line = -1, col='blue', outer = TRUE)
+
+plot(crim_to_medv)
+mtext("predictor is medv", side = 3, line = -1, col='blue', outer = TRUE)
+
+reg_nox = summary(crim_to_nox)$r.squared
+reg_chas = summary(crim_to_chas)$r.squared
+reg_rm = summary(crim_to_rm)$r.squared
+reg_dis = summary(crim_to_dis)$r.squared
+reg_medv = summary(crim_to_medv)$r.squared
+
+cat(reg_nox, reg_chas, reg_rm, reg_dis, reg_medv, sep = " | ")
+
+
+crim_to_all = lm(crim~., data = boston)
+summary(crim_to_all)
+
+
+simple_coefficient = c(crim_to_zn$coefficients[2], crim_to_indus$coefficients[2], crim_to_chas$coefficients[2], 
+                       crim_to_nox$coefficients[2], crim_to_rm$coefficients[2], crim_to_age$coefficients[2], 
+                       crim_to_dis$coefficients[2], crim_to_rad$coefficients[2], crim_to_tax$coefficients[2], 
+                       crim_to_ptratio$coefficients[2], crim_to_black$coefficients[2], crim_to_lstat$coefficients[2], 
+                       crim_to_medv$coefficients[2])
+multiple_coefficient = c(crim_to_all$coefficients[-1])
+
+plot(simple_coefficient, multiple_coefficient, main = "Univariate V.S  Multiple Regression coefficients", 
+     xlab = "Univariate coefficients", ylab = "Multiple coefficients")
+
+
+poly_zn = lm(crim~poly(zn, 3), data = boston)
+poly_indus = lm(crim~poly(indus, 3), data = boston)
+poly_nox = lm(crim~poly(nox, 3), data = boston)
+poly_rm = lm(crim~poly(rm, 3), data = boston)
+poly_age = lm(crim~poly(age, 3), data = boston)
+poly_dis = lm(crim~poly(dis, 3), data = boston)
+poly_rad = lm(crim~poly(rad, 3), data = boston)
+poly_tax = lm(crim~poly(tax, 3), data = boston)
+poly_ptratio = lm(crim~poly(ptratio, 3), data = boston)
+poly_black = lm(crim~poly(black, 3), data = boston)
+poly_lstat = lm(crim~poly(lstat, 3), data = boston)
+poly_medv = lm(crim~poly(medv, 3), data = boston)
+
+summary(poly_zn)
+summary(poly_indus)
+summary(poly_nox)
+summary(poly_rm)
+summary(poly_age)
+summary(poly_dis)
+summary(poly_rad)
+summary(poly_tax)
+summary(poly_ptratio)
+summary(poly_black)
+summary(poly_lstat)
+summary(poly_medv)
+
+
+
+# 3.)
+b0 = -8
+b1 = 0.1
+b2 = 1
+b3 = -0.4
+
+
+h = 32
+gpa = 3.0
+psqi = 11
+y = b0 + (b1 * h) + (b2 * gpa) + (b3 * psqi)
+prob = exp(y) / (1 + exp(y))
+prob
+
+
+h2 = 10 * log(13 / 7) + 5.44 * 10
+h2
+
+
+h3 = 10 * log(3 / 2) + (5 + (3 * 0.04)) * 10
+h3
+
+
+
+# 4.)
+library(tokenizers)
+library(dplyr)
+library(SnowballC)
+library(tm)
+library(caret)
+library(e1071)
+library(gmodels)
+
+
+bbc$category = as.factor(bbc$category)
+head(bbc)
+
+bbc = na.omit(bbc)
+
+token= VCorpus(VectorSource(bbc$text)) %>% 
+  tm_map(removeNumbers) %>% 
+  tm_map(removePunctuation) %>% 
+  tm_map(stripWhitespace) %>%  
+  tm_map(content_transformer(tolower)) %>%　
+  tm_map(removeWords, stopwords("english")) %>% 
+  tm_map(stemDocument) %>% 
+  DocumentTermMatrix(control = list(wordLengths = c(2, Inf))) %>% 
+  removeSparseTerms(0.9)
+inspect(token)
+token_df = as.data.frame(as.matrix(token), stringsAsFactors = FALSE)
+
+loc = (which(token_df[2100,] > 4))
+token_df[2100, loc]
+
+
+correlation = cor(token_df) %>% 
+  findCorrelation(cutoff = 0.5)
+correlation
+
+token = token[, -c(correlation)]
+inspect(token)
+
+index = createDataPartition(bbc$category, p = 0.85, list = FALSE)
+train = bbc[index,]
+train_label = train$category
+prop_train = prop.table(table(train$category))
+prop_train
+sum(prop_train)
+
+test = bbc[-index,]
+test_label = test$category
+prop_test = prop.table(table(test$category))
+prop_test
+sum(prop_test)
+
+train_token = token[index,]
+test_token = token[-index,]
+freq = findFreqTerms(train_token, 10)
+train_token = train_token[, freq]
+test_token = test_token[, freq]
+train_token = apply(train_token, MARGIN = 2, function(x){x = ifelse(x > 0, "Yes", "No")})
+test_token = apply(test_token, MARGIN = 2, function(x){x = ifelse(x > 0, "Yes", "No")})
+
+classifier = naiveBayes(train_token, train_label, laplace = 1)
+predictor = predict(classifier, test_token)
+CrossTable(predictor, test_label, prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE, dnn = c('predicted', 'actual'))
+
+confusion = confusionMatrix(predictor, test_label)
+confusion
+
+confusion_table = as.table(confusion)
+print(confusion_table[1,1])
+
+precision = function(matrix, position)
+{
+  tp = matrix[position, position]
+  fp = sum(matrix[position, -position])
+  p = tp / (tp + fp)
+  return (p * 100)
+}
+
+recall = function(matrix, position)
+{
+  tp = matrix[position, position]
+  fn = sum(matrix[-position, position])
+  r = tp / (tp + fn)
+  return (r * 100)
+}
+
+Topics = c("Business", "Entertainment", "Politics", "Sport", "Tech")
+Precisions = c(round(precision(confusion_table, 1), 2), round(precision(confusion_table, 2), 2), 
+               round(precision(confusion_table, 3), 2), round(precision(confusion_table, 4), 2), 
+               round(precision(confusion_table, 5), 2))
+Recalls = c(round(recall(confusion_table, 1), 2), round(recall(confusion_table, 2), 2),
+            round(recall(confusion_table, 3), 2), round(recall(confusion_table, 4), 2), 
+            round(recall(confusion_table, 5), 2))
+pres_rec = data.frame(Topics, Precisions, Recalls)
+pres_rec
+
+
